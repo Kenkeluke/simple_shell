@@ -16,5 +16,7 @@
  */
 
 pid_t my_ppid(void);
+char *split(char *string);
+char *line_reader(void);
 
 #endif /*MAIN_H*/

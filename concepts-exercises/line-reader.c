@@ -10,7 +10,7 @@
  *
  */
 
-int main(void)
+char *line_reader(void)
 {
 	char prompt[] = "$$ ";
 	char* line = NULL;
@@ -19,7 +19,7 @@ int main(void)
 	write(1, prompt, 3);
 	return_value = getline(&line, &line_size, stdin);
 	write(1, line, line_size);
-	free(line);
+	
 
-	return 0;
+	return line;
 }

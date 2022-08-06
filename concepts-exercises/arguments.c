@@ -14,5 +14,6 @@ int i;
 	{
 		printf("Argument number %d = %s \n", i,  argv[i]);
 	}
+	split(*argv);
 	return (0);
 }

@@ -9,6 +9,7 @@
 int main(void)
 {
 
-my_ppid();
+split(line_reader());
+
     return(0);
 }
