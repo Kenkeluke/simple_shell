@@ -20,7 +20,7 @@
  */
 
 pid_t my_ppid(void);
-char **split(char *string);
+char *split(char *string);
 char *line_reader(void);
 void exec(char **args);
 

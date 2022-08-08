@@ -8,8 +8,8 @@
 
 int main(void)
 {
-char **args = split(line_reader());
-exec(args);
+char *args = split(line_reader());
+exec(&args);
 
     return(0);
 }
