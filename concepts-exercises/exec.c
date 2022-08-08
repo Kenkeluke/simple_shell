@@ -8,7 +8,7 @@
  *
  */
 
-void exec(char **args[])
+void exec(char **args)
 {
 pid_t child;
 pid_t wstatus;
@@ -22,15 +22,15 @@ perror("error");
 
 if(child == 0)
 {
-	exec(args[]);
+	exec(args);
 	perror("error");
-	exit();
+	exit(1);
 
 }
 
 else
 {
-wait(wstatus);
+wait(&wstatus);
 }
 
 
