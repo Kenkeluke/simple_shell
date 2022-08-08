@@ -9,9 +9,9 @@
  *
  */
 
-char *split(char *string)
+char **split(char *string)
 {
-	char *token;
+	char **token;
 	char *separator = " ";
 
 	token = strtok( string, separator);

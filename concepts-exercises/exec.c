@@ -22,17 +22,14 @@ perror("error");
 
 if(child == 0)
 {
-	exec(args);
-	perror("error");
-	exit(1);
+	if (execve(args[0], args, NULL) == -1)
+	        perror("error");
 
 }
 
 else
 {
 wait(&wstatus);
+printf("done\n");
 }
-
-
-
 }

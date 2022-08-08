@@ -18,7 +18,7 @@ char *line_reader(void)
 	ssize_t return_value;
 	write(1, prompt, 3);
 	return_value = getline(&line, &line_size, stdin);
-	write(1, line, line_size);
+	/*write(1, line, line_size);*/
 	
 
 	return line;
