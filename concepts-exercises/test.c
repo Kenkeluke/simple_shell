@@ -9,6 +9,8 @@
 int main(void)
 {
 char *args = split(line_reader());
+printf("%s", args);
+
 exec(&args);
 
     return(0);
