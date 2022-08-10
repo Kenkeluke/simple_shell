@@ -3,10 +3,14 @@
 * rline - reads a single line from stdin
 * Return: the string of the line
 */
-int rline(char **line, size_t *linesize)
+void rline(char **line)
 {
-	int bytes_read;
+	size_t linesize = 0;
+
 	/*getline from stdin */
-	bytes_read = getline(line, linesize, stdin);
-	return (bytes_read);
+	if ( (getline(line, &linesize, stdin) == -1))
+	{
+		free(line);
+		exit(0);
+	}
 }

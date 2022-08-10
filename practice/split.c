@@ -7,31 +7,39 @@
 * 
 * Return: an array of each word of the string
 */
-char **split(char *line,unsigned int *n_word, size_t linesize)
-{	char **array;
-	size_t  i;
+char **split(char *line)
+{
+	char **array;
 	char *delim = "\n ";
 	char *token = strtok(line, delim);
+	void *p = NULL;
+	unsigned int n_word, i;
 
-	/* malloc with the size of linesize (usually 120) */
-	array = malloc(linesize * sizeof(char*));
 
-	/*fill the array with tokens from the line*/
-	for (i = 0, array[0] = token ; token != NULL; i++)
+	array = malloc(	1 * sizeof(char*));
+	if (array == NULL)
 	{
-		array[i] = token;
-		token = strtok(NULL, delim);
-		(*n_word)++;
-		printf("word -> %s\n", array[i]);
+		free(array);
+		return (NULL);
 	}
 
-	/*reallocate with the new size plus 1 for null*/
-	array = realloc(array, (*n_word) + 1);
+	/*fill the array with tokens from the line*/
+	array[0] = token;
+	n_word = 1;
+	printf("word -> %s\n", array[0]);
 
-	/*put null pointer at the end of the array*/
-	array[i] = NULL;
+	for (i = 1; token != NULL; i++)
+	{
+		array = _realloc(p, i, i+1);
+		printf("%s\n", array[i]);
+		token = strtok(NULL, delim);
+		array[i] = token;
 
-	printf("array reallocated with size %u\n", (*n_word) + 1);
+		printf("word -> %s\n", array[i]);
+		n_word++;
+	}
+	printf("array reallocated with size %u\n", i - 1);
+	printf("num of words = %u\n", n_word - 1);
 	return (array);
 }
 

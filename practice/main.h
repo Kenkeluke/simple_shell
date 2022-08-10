@@ -9,19 +9,27 @@
 #include <sys/stat.h>
 
 extern char** environ;
-char** split(char* line, unsigned int* n_words, size_t n);
+char** split(char* line);
 int exec(char** array);
-int rline(char** line, size_t* linesize);
+void rline(char **line);
 
 char* _getenv(const char* name);
 int _check(char* file);
 void printpath(char* str);
+
+int checkbuilt(char** args);
+
 void shell_exit(char **args);
 void shell_help(char **args);
 void shell_cd(char **args);
+void shell_wich(char **args);
+void shell_env(char **args);
+
+void* _realloc(void* ptr, unsigned int old_size, unsigned int new_size);
+void _puts(char* str);
+int _putchar(char c);
 
 /**
- * 
  * 
  * 
  * 
@@ -40,8 +48,8 @@ typedef struct list
 	struct list* next;
 } path;
 
-path* listpath(path head, char* pathvalue);
-path* add_node_end(path* tail, const char* tok);
-
+path* listpath(void);
+path* add_node_end(path* tail, char* tok);
+void free_list(path* head);
 
 #endif

@@ -6,26 +6,12 @@
 * ps: fork returns 0 to the child and pid to the father
 * Return: -1 if execution failed, 0 if it worked
 */
-int exec(char **array)
+int exec(char **argv)
 {
     pid_t _fork;
     int status, _wait;
-    int i;
 
-builtins built_in[] =
-{
-    {"exit", shell_exit},
-    {"help", shell_help},
-    {"cd", shell_cd}
-};
 
-for(i = 0; i < 3; i++)
-	{
-		if( strcmp(array[0], built_in[i].command) == 0)
-		{
-			built_in[i].func(array);
-		}
-	}
     printf("Before execve\n");
 
     _fork = fork();
@@ -33,7 +19,7 @@ for(i = 0; i < 3; i++)
     /*if fork returns 0, that means the child process is running*/
     if (_fork == 0)
     {
-        if (execve(array[0], array, NULL) == -1)
+        if (execve(argv[0], argv, environ) == -1)
         {
             perror("ERROR :");
             return(-1);
