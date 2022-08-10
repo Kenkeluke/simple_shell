@@ -7,13 +7,14 @@
 *return:0 as always
 */
 
-int main(int argc __attribute__((unused)), char *argv[])
+/**int main(int argc __attribute__((unused)), char *argv[])
 {
 int i;
 	for (i = 1; argv[i]; i++)
 	{
 		printf("Argument number %d = %s \n", i,  argv[i]);
 	}
-	split(*argv);
 	return (0);
 }
+
+*/
