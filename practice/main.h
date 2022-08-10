@@ -16,6 +16,23 @@ int rline(char** line, size_t* linesize);
 char* _getenv(const char* name);
 int _check(char* file);
 void printpath(char* str);
+void shell_exit(char **args);
+void shell_help(char **args);
+void shell_cd(char **args);
+
+/**
+ * 
+ * 
+ * 
+ * 
+ */
+
+typedef struct builtin
+{
+    char *command;
+    void (*func)(char **args);
+}builtins;
+
 
 typedef struct list
 {

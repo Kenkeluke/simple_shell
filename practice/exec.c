@@ -10,6 +10,22 @@ int exec(char **array)
 {
     pid_t _fork;
     int status, _wait;
+    int i;
+
+builtins built_in[] =
+{
+    {"exit", shell_exit},
+    {"help", shell_help},
+    {"cd", shell_cd}
+};
+
+for(i = 0; i < 3; i++)
+	{
+		if( strcmp(array[0], built_in[i].command) == 0)
+		{
+			built_in[i].func(array);
+		}
+	}
     printf("Before execve\n");
 
     _fork = fork();
