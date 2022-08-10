@@ -17,10 +17,10 @@ int checkbuilt(char **args)
 	{NULL, NULL}
 	};
 
-	printf("in the checkbuilt");
+	printf("in the checkbuilt\n");
 	for (i = 0; built_in[i].command != NULL; i++)
 	{
-		if (!strcmp(args[1], built_in[i].command))
+		if (!strcmp(args[0], built_in[i].command))
 		{
 			built_in[i].func(args);
 			return (0);

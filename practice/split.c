@@ -9,8 +9,8 @@
 */
 char **split(char *line)
 {
-	char *delim = " ";
-	void *p = NULL;
+	char *delim = "\n ";
+	void* p = NULL;
 	unsigned int n_word = 1, i;
 	char **array = malloc( n_word * sizeof(char *));
 	char *token = strtok(line, delim);
@@ -34,7 +34,7 @@ char **split(char *line)
 		if (token != NULL)
 		{
 			n_word++;
-			array = realloc(array, n_word * sizeof(char *));
+			array = _realloc(p, n_word - 1, n_word);
 			array[i] = token;
 			printf("word -> %s\n", array[i]);
 			
@@ -42,8 +42,8 @@ char **split(char *line)
 		
 		
 	}
-	printf("array reallocated with size %u\n", i - 1);
-	printf("num of words = %u\n", n_word - 1 );
+	printf("array reallocated with size %u\n", n_word);
+
 	return (array);
 }
 
