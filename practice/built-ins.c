@@ -7,13 +7,6 @@
 
 void shell_exit(char **args)
 {
-	int i;
-	while (args[i] != NULL)
-	{
-		free(args[i]);
-		i++;
-	}
-	free(args);
     exit(0);
 }
 
