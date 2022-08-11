@@ -35,15 +35,15 @@ int _strlen(char *s);
 
 typedef struct builtin
 {
-    char *command;
-    void (*func)(char **args);
-}builtins;
+	char *command;
+	void (*func)(char **args);
+} builtins;
 
 
 typedef struct list
 {
 	char *str;
-	struct list* next;
+	struct list *next;
 } path;
 
 path *listpath(void);

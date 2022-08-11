@@ -2,7 +2,6 @@
 
 /**
 * printpath - prints each directory contained in the environment variable PATH
-* @str: the value of the path
 * Return: the head of the list. null otherwise
 */
 path *listpath()

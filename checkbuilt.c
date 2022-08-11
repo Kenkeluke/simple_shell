@@ -1,7 +1,7 @@
 #include "main.h"
 /*
 * checkbuilt - looks for builtin functions
-* @ards: array
+* @args: array
 * Return: 0 if found and executed, 1 otherwise
 */
 int checkbuilt(char **args)

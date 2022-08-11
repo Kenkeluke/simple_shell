@@ -30,7 +30,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	return (ptr);
 }
 /**
- * *_strcpy - copies a string into another
+ * _strcpy - copies a string into another
  * @src: the source string pointer
  * @dest: the target string pointer
  *
