@@ -2,14 +2,14 @@
 #include <unistd.h>
 /**
 * exec - allows a process to execute another program
-* @array: the line splitted into words
+* @argv: the line splitted into words
 * ps: fork returns 0 to the child and pid to the father
 * Return: -1 if execution failed, 0 if it worked
 */
 int exec(char **argv)
 {
-    pid_t _fork;
-    int status, _wait;
+	pid_t _fork;
+	int status, _wait;
 
 
     _fork = fork();
