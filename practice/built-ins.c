@@ -37,12 +37,14 @@ void shell_help(char** args __attribute__((unused)))
         " help : displays this help message\n",
         " exit : exits the shell\n",
 		" env : prints the current environment\n",
-		" _wich : looks for files in the current PATH\n"
+		" _wich : looks for files in the current PATH\n",
+		""
 
     };
+
     while(*help_message[i])
     {
-		write(1, help_message[i], strlen(help_message[i]));
+		write(1, help_message[i], _strlen(help_message[i]));
 		i++;
     }
 }
