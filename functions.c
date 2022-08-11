@@ -1,5 +1,5 @@
 #include "main.h"
-/*
+/**
 * _realloc - mimics realloc function
 *@ptr: void pointer
 *@old_size: previous size

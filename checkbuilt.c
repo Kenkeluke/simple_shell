@@ -1,5 +1,5 @@
 #include "main.h"
-/*
+/**
 * checkbuilt - looks for builtin functions
 * @args: array
 * Return: 0 if found and executed, 1 otherwise

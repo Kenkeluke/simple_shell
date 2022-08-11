@@ -59,10 +59,6 @@ void shell_cd(char **args)
 	{
 		perror("Hash: cd:missing arguments");
 	}
-	if (args[1] == NULL)
-	{
-		perror("Hash: cd:missing arguments");
-	}
 	else
 	{
 		if (chdir(args[1]) != 0)
