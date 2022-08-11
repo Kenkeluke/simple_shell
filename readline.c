@@ -7,11 +7,14 @@
 void rline(char **line)
 {
 	size_t linesize = 0;
+	int bytes_read;
 
+	bytes_read = getline(line, &linesize, stdin);
 	/*getline from stdin */
-	if ((getline(line, &linesize, stdin) == -1))
+	if ((bytes_read == -1))
 	{
 		free(line);
 		exit(0);
 	}
+
 }

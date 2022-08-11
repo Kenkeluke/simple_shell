@@ -7,22 +7,21 @@
 */
 char **split(char *line)
 {
-	char *delim = "\n ";
+	char *delim = "\n \t";
 	void *p = NULL;
 	unsigned int n_word = 1, i;
 	char **array = malloc(n_word * sizeof(char *));
 	char *token = strtok(line, delim);
 
 
-
-	if (array == NULL)
+	if (array == NULL || token == NULL)
 	{
 		free(array);
 		return (NULL);
 	}
 
-	/*fill the array with tokens from the line*/
 	array[0] = token;
+
 
 
 	for (i = 1; token != NULL; i++)

@@ -15,13 +15,14 @@ int main(void)
 		_puts("($) ");
 		rline(&line);
 
-		if (*line == '\n')
+		words = split(line);
+
+		if (words == NULL || line == NULL)
 		{
 			free(line);
+			free(words);
 			continue;
 		}
-
-		words = split(line);
 
 		if (checkbuilt(words) == 0)
 		{
@@ -35,6 +36,7 @@ int main(void)
 		{
 			puts("error in execution\n");
 		}
+		free(line);
 		free(words);
 		words = NULL;
 		line = NULL;
