@@ -8,7 +8,7 @@ void rline(char **line)
 	size_t linesize = 0;
 
 	/*getline from stdin */
-	if ( (getline(line, &linesize, stdin) == -1))
+	if ((getline(line, &linesize, stdin) == -1))
 	{
 		free(line);
 		exit(0);

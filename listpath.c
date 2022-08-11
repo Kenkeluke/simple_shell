@@ -11,12 +11,11 @@ path *listpath()
 	unsigned int i;
 	path *tail;
 	path *head = malloc(sizeof(path));
-	
 
 	if (pathvalue == NULL || head == NULL)
 	{
 		free(head);
-		return(NULL);
+		return (NULL);
 	}
 
 	head->str = pathvalue;
@@ -32,10 +31,10 @@ path *listpath()
 }
 
 
-path *add_node_end(path *tail,char *tok)
+path *add_node_end(path *tail, char *tok)
 {
 	path *new = malloc(sizeof(path));
-	
+
 	if (tok == NULL || tail == NULL)
 	{
 		free(new);

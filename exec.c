@@ -11,32 +11,30 @@ int exec(char **argv)
 	pid_t _fork;
 	int status, _wait;
 
-
-    _fork = fork();
-
-    /*if fork returns 0, that means the child process is running*/
-    if (_fork == 0)
-    {
-        if (execve(argv[0], argv, environ) == -1)
-        {
-            perror("ERROR :");
-            return(-1);
-        }
-    }/*if fork returns negative number, that means it failed*/
-    else if (_fork < 0)
-    {
-        puts("error in fork");
-        return (-1);
-    }
-    else
-    {
-        /*wait till the child process ends*/
-        _wait = wait(&status);
-        if (_wait == -1)
-        {
-            puts("ERROR: ");
-            return (-1);
-        }
-    }
-    return (0);
+	_fork = fork();
+	/*if fork returns 0, that means the child process is running*/
+	if (_fork == 0)
+	{
+		if (execve(argv[0], argv, environ) == -1)
+		{
+			perror("ERROR :");
+			return(-1);
+		}
+	}/*if fork returns negative number, that means it failed*/
+	else if (_fork < 0)
+	{
+		puts("error in fork");
+		return (-1);
+	}
+	else
+	{
+		/*wait till the child process ends*/
+		_wait = wait(&status);
+		if (_wait == -1)
+		{
+			puts("ERROR: ");
+			return (-1);
+		}
+	}
+	return (0);
 }

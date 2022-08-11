@@ -33,8 +33,7 @@ char **split(char *line)
 		{
 			n_word++;
 			array = _realloc(p, n_word - 1, n_word);
-			array[i] = token;
-			
+			array[i] = token;	
 		}
 
 	}

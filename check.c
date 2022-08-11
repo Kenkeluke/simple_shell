@@ -14,6 +14,5 @@ int _check(char *filename)
 		puts(" FOUND\n");
 	else
 		puts("NOT FOUND\n");
-    return (0);
-
+	return (0);
 }

@@ -9,7 +9,7 @@ char *_getenv(char *name)
 {
 	unsigned int i, k, len;
 
-	char *value ;
+	char *value;
 
 	len = _strlen(name);
 
