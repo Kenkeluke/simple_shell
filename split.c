@@ -23,7 +23,7 @@ char **split(char *line)
 
 	/*fill the array with tokens from the line*/
 	array[0] = token;
-	printf("word -> %s\n", array[0]);
+
 
 	for (i = 1; token != NULL; i++)
 	{
@@ -34,12 +34,11 @@ char **split(char *line)
 			n_word++;
 			array = _realloc(p, n_word - 1, n_word);
 			array[i] = token;
-			printf("word -> %s\n", array[i]);
-
+			
 		}
 
 	}
-	free(line);
+
 	printf("array reallocated with size %u\n", n_word);
 	array[n_word] = NULL;
 
