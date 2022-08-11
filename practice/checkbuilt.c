@@ -20,8 +20,9 @@ int checkbuilt(char **args)
 	printf("in the checkbuilt\n");
 	for (i = 0; built_in[i].command != NULL; i++)
 	{
-		if (!strcmp(args[0], built_in[i].command))
+		if (!(_strcmp(args[0], built_in[i].command)))
 		{
+			printf("compared\n");
 			built_in[i].func(args);
 			return (0);
 		}

@@ -39,9 +39,9 @@ char **split(char *line)
 			printf("word -> %s\n", array[i]);
 			
 		}
-		
-		
+
 	}
+	free(line);
 	printf("array reallocated with size %u\n", n_word);
 	array[n_word] = NULL;
 

@@ -7,12 +7,14 @@
 
 void shell_exit(char **args)
 {
-	int i;
+	int i = 0;
+	printf("entered exit");
 	while (args[i] != NULL)
 	{
 		free(args[i]);
 		i++;
 	}
+	free(args[i]);
 	free(args);
     exit(0);
 }
@@ -72,7 +74,6 @@ void shell_env(char** args __attribute__((unused)))
     extern char **environ;
     unsigned int i;
 
-	printf("env func");
     for (i = 0; environ[i] != NULL; i++)
         printf("%s\n", environ[i]);
 }
