@@ -1,6 +1,7 @@
 #include "main.h"
 /**
 * rline - reads a single line from stdin
+* @line: the line input
 * Return: the string of the line
 */
 void rline(char **line)

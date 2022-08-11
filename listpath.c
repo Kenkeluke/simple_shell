@@ -3,6 +3,7 @@
 /**
 * printpath - prints each directory contained in the environment variable PATH
 * @str: the value of the path
+* Return: the head of the list. null otherwise
 */
 path *listpath()
 {
@@ -30,7 +31,12 @@ path *listpath()
 	return (head);
 }
 
-
+/**
+* add_node_end - adds a node
+* @tail: the last node
+* @tok: the token string
+* Return: the new node of the list. null otherwise
+*/
 path *add_node_end(path *tail, char *tok)
 {
 	path *new = malloc(sizeof(path));
@@ -46,11 +52,13 @@ path *add_node_end(path *tail, char *tok)
 	return (new);
 }
 
-
+/**
+* free_list - frees a linked list
+* @head: the head of the list
+*/
 void free_list(path *head)
 {
 	path *tmp;
-
 
 	while (head != NULL)
 	{

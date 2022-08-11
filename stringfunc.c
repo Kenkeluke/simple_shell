@@ -4,7 +4,7 @@
 * return : void
 * @str: string to be printed
 */
-void _puts(char* str)
+void _puts(char *str)
 {
 	int i;
 
@@ -30,7 +30,7 @@ int _putchar(char c)
  * @s2: the second char pointer
  * Return: 0 if they're equal, any other integer otherwise
  */
-int _strcmp(char* s1, char* s2)
+int _strcmp(char *s1, char *s2)
 {
 	int i, dif;
 

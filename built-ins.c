@@ -102,7 +102,6 @@ void shell_wich(char **args)
 
 		if (err == 0)
 		{
-			
 			puts(args[i]);
 			puts(" : FOUND\n");
 		}

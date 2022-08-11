@@ -18,9 +18,9 @@ int exec(char **argv)
 		if (execve(argv[0], argv, environ) == -1)
 		{
 			perror("ERROR :");
-			return(-1);
+			return (-1);
 		}
-	}/*if fork returns negative number, that means it failed*/
+	} /*if fork returns negative number, that means it failed*/
 	else if (_fork < 0)
 	{
 		puts("error in fork");
