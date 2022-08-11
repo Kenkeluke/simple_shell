@@ -16,7 +16,7 @@ void shell_exit(char **args)
 	}
 	free(args[i]);
 	free(args);
-    exit(0);
+	exit(0);
 }
 
 /**
@@ -28,25 +28,25 @@ void shell_exit(char **args)
 
 void shell_help(char** args __attribute__((unused)))
 {
-    int i = 0;
-    char *help_message[] = 
-    {
-        "Welcome to a simple shell built by Arafah and Kenkeluke\n",
-        "The Following built-ins are supported:\n",
-        " cd : change current working directory\n",
-        " help : displays this help message\n",
-        " exit : exits the shell\n",
+	int i = 0;
+	char *help_message[] = 
+	{
+		"Welcome to a simple shell built by Arafah and Kenkeluke\n",
+		"The Following built-ins are supported:\n",
+		" cd : change current working directory\n",
+		" help : displays this help message\n",
+		" exit : exits the shell\n",
 		" env : prints the current environment\n",
 		" _wich : looks for files in the current PATH\n",
 		""
 
-    };
+	};
 
-    while(*help_message[i])
-    {
+	while(*help_message[i])
+	{
 		write(1, help_message[i], _strlen(help_message[i]));
 		i++;
-    }
+	}
 }
 
 /**
@@ -57,11 +57,11 @@ void shell_help(char** args __attribute__((unused)))
 
 void shell_cd(char **args)
 {
-    if(args[1] == NULL)
-    {
-        perror("Hash: cd:missing arguments");
+	if(args[1] == NULL)
+	{
+		perror("Hash: cd:missing arguments");
 	}
-    else
+	else
 	{
 		if(chdir(args[1]) != 0)
 			perror("HAsh: cd");
@@ -73,11 +73,11 @@ void shell_cd(char **args)
 */
 void shell_env(char** args __attribute__((unused)))
 {
-    extern char **environ;
-    unsigned int i;
+	extern char **environ;
+	unsigned int i;
 
-    for (i = 0; environ[i] != NULL; i++)
-        printf("%s\n", environ[i]);
+	for (i = 0; environ[i] != NULL; i++)
+		printf("%s\n", environ[i]);
 }
 /*
 * 
