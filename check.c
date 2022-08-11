@@ -11,9 +11,9 @@ int _check(char *filename)
 	int err = stat(filename, &st);
 
 	if (err == 0)
-		printf(" FOUND\n");
+		puts(" FOUND\n");
 	else
-		printf("NOT FOUND\n");
+		puts("NOT FOUND\n");
     return (0);
 
 }

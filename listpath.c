@@ -15,7 +15,6 @@ path *listpath()
 
 	if (pathvalue == NULL || head == NULL)
 	{
-		printf("pathvalue is empty");
 		free(head);
 		return(NULL);
 	}
@@ -26,10 +25,9 @@ path *listpath()
 	for (i = 0; token != NULL; i++)
 	{
 		tail = add_node_end(tail, token);
-		printf("%s\n", tail->str);
+
 		token = strtok(NULL, ":");
 	}
-	printf("tail is %s %p\n", tail->str,(void*) tail->next);
 	return (head);
 }
 
@@ -41,7 +39,6 @@ path *add_node_end(path *tail,char *tok)
 	if (tok == NULL || tail == NULL)
 	{
 		free(new);
-		printf("there is no nodes");
 		return (NULL);
 	}
 	new->str = tok;

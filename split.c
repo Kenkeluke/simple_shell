@@ -39,7 +39,7 @@ char **split(char *line)
 
 	}
 
-	printf("array reallocated with size %u\n", n_word);
+
 	array[n_word] = NULL;
 
 	return (array);

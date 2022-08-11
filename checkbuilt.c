@@ -17,7 +17,6 @@ int checkbuilt(char **args)
 	{NULL, NULL}
 	};
 
-	printf("in the checkbuilt\n");
 
 	for (i = 0; built_in[i].command != NULL; i++)
 	{

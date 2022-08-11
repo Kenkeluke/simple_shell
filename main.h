@@ -13,7 +13,7 @@ char** split(char* line);
 int exec(char** array);
 void rline(char **line);
 
-char* _getenv(const char* name);
+char* _getenv(char* name);
 int _check(char* file);
 void printpath(char* str);
 

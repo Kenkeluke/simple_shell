@@ -5,21 +5,21 @@
 * Return: a pointer to a string with the value
 *			null if the env variable doesn't exist
 */
-char *_getenv(const char *name)
+char *_getenv(char *name)
 {
-	unsigned int i, k, _strlen;
+	unsigned int i, k, len;
 
 	char *value ;
 
-	_strlen = strlen(name);
+	len = _strlen(name);
 
-	k = _strlen + 1;
+	k = len + 1;
 
 	/* loop for every envron variable */
 	for (i = 0; environ[i] != NULL; i++)
 	{
 		/* if the name is the same as variable name */
-		if (!strncmp(environ[i], name, _strlen))
+		if (!strncmp(environ[i], name, len))
 		{
 			value = &(environ[i][k]);
 			return (value);

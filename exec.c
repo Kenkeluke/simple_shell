@@ -12,8 +12,6 @@ int exec(char **argv)
     int status, _wait;
 
 
-    printf("Before execve\n");
-
     _fork = fork();
 
     /*if fork returns 0, that means the child process is running*/
@@ -27,7 +25,7 @@ int exec(char **argv)
     }/*if fork returns negative number, that means it failed*/
     else if (_fork < 0)
     {
-        printf("error in fork");
+        puts("error in fork");
         return (-1);
     }
     else
@@ -36,7 +34,7 @@ int exec(char **argv)
         _wait = wait(&status);
         if (_wait == -1)
         {
-            printf("ERROR: ");
+            puts("ERROR: ");
             return (-1);
         }
     }

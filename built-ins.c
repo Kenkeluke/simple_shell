@@ -9,7 +9,7 @@ void shell_exit(char **args)
 {
 	int i = 0;
 
-	printf("entered exit");
+
 	while (args[i] != NULL)
 	{
 		free(args[i]);
@@ -60,6 +60,7 @@ void shell_cd(char **args)
 	if(args[1] == NULL)
 	{
 		perror("Hash: cd:missing arguments");
+	}
 	if (args[1] == NULL)
 	{
 		perror("Hash: cd:missing arguments");
@@ -82,7 +83,9 @@ void shell_env(char **args __attribute__((unused)))
 	unsigned int i;
 
 	for (i = 0; environ[i] != NULL; i++)
-		printf("%s\n", environ[i]);
+	{
+		puts(environ[i]);
+	}
 }
 /**
  *shell_wich - Displays help message in shell
@@ -102,11 +105,14 @@ void shell_wich(char **args)
 
 		if (err == 0)
 		{
-			printf("%s : FOUND\n", args[i]);
+			
+			puts(args[i]);
+			puts(" : FOUND\n");
 		}
 		else
 		{
-			printf("%s : NOT FOUND\n", args[i]);
+			puts(args[i]);
+			puts(" : NOT FOUND\n");
 		}
 	}
 }
