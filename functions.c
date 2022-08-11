@@ -1,11 +1,14 @@
 #include "main.h"
-/*
-* 
-* 
+/**
+* _realloc - mimics realloc function
+*@ptr: void pointer
+*@old_size: previous size
+*@new_size: new size
+* Return: nothing
 */
-void* _realloc(void* ptr, unsigned int old_size, unsigned int new_size)
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	char* p;
+	char *p;
 	unsigned int i;
 
 	if (old_size == new_size)
@@ -19,17 +22,18 @@ void* _realloc(void* ptr, unsigned int old_size, unsigned int new_size)
 			if (ptr != NULL)
 			{
 				for (i = 0; i < new_size && i < old_size; i++)
-					p[i] = *((char*)(ptr)+i);
+					p[i] = *((char *)(ptr) + i);
 			}
 			return (p);
 		}
 	}
-	return(ptr);
+	return (ptr);
 }
 
-/*
-* 
-* 
+/**
+* _puts - mimic puts function
+* return : void
+* @str: string to be printed
 */
 void _puts(char *str)
 {
@@ -57,7 +61,7 @@ int _putchar(char c)
  * @s2: the second char pointer
  * Return: 0 if they're equal, any other integer otherwise
  */
-int _strcmp(char* s1, char* s2)
+int _strcmp(char *s1, char *s2)
 {
 	int i, dif;
 

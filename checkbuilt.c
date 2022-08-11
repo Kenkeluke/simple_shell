@@ -1,10 +1,11 @@
 #include "main.h"
-/*
-* 
-* 
-* 
-* Return: 0 if found and executed, 1 otherwise
+/**
+* checkbuilt - checks if the first argument matches a builtin command
+* Description: This function checks if the first argument matches a builtin
+*@args: array of arguments
+*Return: 0 if found and executed, 1 otherwise
 */
+
 int checkbuilt(char **args)
 {
 	unsigned int i;
