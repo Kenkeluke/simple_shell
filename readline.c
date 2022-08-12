@@ -2,9 +2,10 @@
 /**
 * rline - reads a single line from stdin
 * @line: the line input
+* @interactive: 1 if interactive, 0 otherwise
 * Return: the string of the line
 */
-void rline(char **line)
+void rline(char **line, int interactive)
 {
 	size_t linesize = 0;
 	int bytes_read;
@@ -13,7 +14,10 @@ void rline(char **line)
 	/*getline from stdin */
 	if ((bytes_read == -1))
 	{
-		free(line);
+		if (interactive)
+		{
+			free(line);
+		}
 		exit(0);
 	}
 

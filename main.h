@@ -11,7 +11,7 @@
 extern char **environ;
 char **split(char *line, char *filename);
 void exec(char **array);
-void rline(char **line);
+void rline(char **line, int);
 
 char *_getenv(char *name);
 int _check(char *file);

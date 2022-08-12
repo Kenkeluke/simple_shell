@@ -15,7 +15,7 @@ void exec(char **argv)
 	/*if fork returns 0, that means the child process is running*/
 	if (_fork == 0)
 	{
-		execve(argv[1], argv, environ);
+		execve(argv[1], argv + 1, environ);
 		perror(argv[0]);
 		exit(0);
 	} /*if fork returns negative number, that means it failed*/

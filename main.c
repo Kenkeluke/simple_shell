@@ -4,20 +4,29 @@
 * main - prints "$ ", wait for the user to enter a command, execute it
 * Return: 0 on success. -1 otherwise
 */
-int main(int ac __attribute__((unused)), char **av)
+int main(int ac __attribute__((unused)), char **av, char **env)
 {
+	int active;
 
-
+	environ = env;
 	while (1)
 	{
 		char *line = NULL, **words = NULL;
+		
 
-		_puts("($) ");
-		rline(&line);
-
+		if (isatty(STDIN_FILENO) == 1)
+		{
+			_puts("($) ");
+			active = 1;
+		}
+		else
+		{
+			active = 0;
+		}
+		rline(&line, active);
 		words = split(line, av[0]);
 
-		if (words == NULL || line == NULL)
+		if (words == NULL || line == NULL || words [1] == NULL)
 		{
 			free(line);
 			free(words);
@@ -33,9 +42,8 @@ int main(int ac __attribute__((unused)), char **av)
 
 		exec(words);
 
-		free(line);
 		free(words);
-		words = NULL;
-		line = NULL;
+		free(line);
 	}
+	return (0);
 }
