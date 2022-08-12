@@ -6,8 +6,8 @@
 */
 int main(void)
 {
-	int err;
 
+	
 	while (1)
 	{
 		char *line = NULL, **words = NULL;
@@ -31,13 +31,10 @@ int main(void)
 			continue;
 		}
 
-		err = exec(words);
-		if (err == -1)
-		{
-			puts("error in execution\n");
-		}
-		free(line);
+		exec(words);
+
 		free(words);
+		free(line);
 		words = NULL;
 		line = NULL;
 	}
