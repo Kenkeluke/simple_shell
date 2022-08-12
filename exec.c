@@ -15,13 +15,13 @@ void exec(char **argv)
 	/*if fork returns 0, that means the child process is running*/
 	if (_fork == 0)
 	{
-		execve(argv[0], argv, environ);
+		execve(argv[1], argv, environ);
 		perror(argv[0]);
 		exit(0);
 	} /*if fork returns negative number, that means it failed*/
 	else if (_fork < 0)
 	{
-		puts("ERROR ");
+		perror(argv[0]);
 	}
 	else
 	{
@@ -29,7 +29,7 @@ void exec(char **argv)
 		_wait = wait(&status);
 		if (_wait == -1)
 		{
-			puts("ERROR: ");
+			perror(argv[0]);
 		}
 	}
 }

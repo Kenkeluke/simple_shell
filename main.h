@@ -9,7 +9,7 @@
 #include <sys/stat.h>
 
 extern char **environ;
-char **split(char *line);
+char **split(char *line, char *filename);
 void exec(char **array);
 void rline(char **line);
 

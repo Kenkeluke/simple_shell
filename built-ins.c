@@ -7,7 +7,7 @@
 
 void shell_exit(char **args)
 {
-	int i = 0;
+	int i = 1;
 
 
 	while (args[i] != NULL)
@@ -57,12 +57,12 @@ void shell_cd(char **args)
 {
 	if (args[1] == NULL)
 	{
-		perror("Hash: cd:missing arguments");
+		perror(args[0]);
 	}
 	else
 	{
-		if (chdir(args[1]) != 0)
-			perror("HAsh: cd");
+		if (chdir(args[2]) != 0)
+			perror(args[0]);
 	}
 }
 /**

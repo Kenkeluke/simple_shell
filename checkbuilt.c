@@ -19,7 +19,7 @@ int checkbuilt(char **args)
 
 	for (i = 0; built_in[i].command != NULL; i++)
 	{
-		if (!(_strcmp(args[0], built_in[i].command)))
+		if (!(_strcmp(args[1], built_in[i].command)))
 		{
 			built_in[i].func(args);
 			return (0);

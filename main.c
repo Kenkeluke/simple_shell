@@ -4,7 +4,7 @@
 * main - prints "$ ", wait for the user to enter a command, execute it
 * Return: 0 on success. -1 otherwise
 */
-int main(void)
+int main(int ac __attribute__((unused)), char **av)
 {
 
 
@@ -15,7 +15,7 @@ int main(void)
 		_puts("($) ");
 		rline(&line);
 
-		words = split(line);
+		words = split(line, av[0]);
 
 		if (words == NULL || line == NULL)
 		{
