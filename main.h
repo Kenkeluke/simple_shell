@@ -10,7 +10,7 @@
 
 extern char **environ;
 char **split(char *line);
-void exec(char **array);
+int exec(char **array);
 void rline(char **line);
 
 char *_getenv(char *name);
@@ -31,8 +31,6 @@ int _putchar(char c);
 int _strcmp(char *s1, char *s2);
 char *_strcpy(char *dest, char *src);
 int _strlen(char *s);
-unsigned int count_tokens(char  *line, char *sep);
-char *_strdup(char *str);
 
 
 typedef struct builtin
