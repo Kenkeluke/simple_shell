@@ -6,7 +6,7 @@
 */
 int main(void)
 {
-	int err;
+
 
 	while (1)
 	{
@@ -31,11 +31,8 @@ int main(void)
 			continue;
 		}
 
-		err = exec(words);
-		if (err == -1)
-		{
-			puts("error in execution\n");
-		}
+		exec(words);
+
 		free(line);
 		free(words);
 		words = NULL;

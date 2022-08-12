@@ -6,7 +6,7 @@
 * ps: fork returns 0 to the child and pid to the father
 * Return: -1 if execution failed, 0 if it worked
 */
-int exec(char **argv)
+void exec(char **argv)
 {
 	pid_t _fork;
 	int status, _wait;
@@ -15,16 +15,13 @@ int exec(char **argv)
 	/*if fork returns 0, that means the child process is running*/
 	if (_fork == 0)
 	{
-		if (execve(argv[0], argv, environ) == -1)
-		{
-			perror(argv[0]);
-			return (-1);
-		}
+		execve(argv[0], argv, environ);
+		perror(argv[0]);
+		exit(0);
 	} /*if fork returns negative number, that means it failed*/
 	else if (_fork < 0)
 	{
-		puts("error in fork");
-		return (-1);
+		puts("ERROR ");
 	}
 	else
 	{
@@ -33,8 +30,6 @@ int exec(char **argv)
 		if (_wait == -1)
 		{
 			puts("ERROR: ");
-			return (-1);
 		}
 	}
-	return (0);
 }
