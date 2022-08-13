@@ -11,7 +11,7 @@ char **split(char *line, char *file)
 	unsigned int  i = count_tokens(_strdup(line), delim);
 	char **array = malloc((i + 2) * sizeof(char *));
 	char *token = strtok(line, delim);
-	
+
 
 	if (array == NULL)
 	{

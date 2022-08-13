@@ -22,3 +22,12 @@ void rline(char **line, int interactive)
 	}
 
 }
+/**
+* sighand - signal handler
+* @signum: the signal value
+*/
+void sighand(int signum __attribute__((unused)))
+{
+	_puts("\n($) ");
+}
+

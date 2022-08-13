@@ -1,7 +1,10 @@
 #include "main.h"
-
 /**
-* main - prints "$ ", wait for the user to enter a command, execute it
+* main - prints "($) ", wait for the user to enter a command, execute it
+* @ac: argument count
+* @av: argument vector
+* @env: environment variables
+*
 * Return: 0 on success. -1 otherwise
 */
 int main(int ac __attribute__((unused)), char **av, char **env)
@@ -9,10 +12,11 @@ int main(int ac __attribute__((unused)), char **av, char **env)
 	int active;
 
 	environ = env;
+	signal(SIGINT, sighand);
+
 	while (1)
 	{
 		char *line = NULL, **words = NULL;
-		
 
 		if (isatty(STDIN_FILENO) == 1)
 		{
@@ -23,27 +27,26 @@ int main(int ac __attribute__((unused)), char **av, char **env)
 		{
 			active = 0;
 		}
+
 		rline(&line, active);
 		words = split(line, av[0]);
 
-		if (words == NULL || line == NULL || words [1] == NULL)
+		if (words == NULL || line == NULL || words[1] == NULL)
 		{
 			free(line);
 			free(words);
 			continue;
 		}
 
-		if (checkbuilt(words) == 0)
+		if (checkbuilt(words) != 0)
 		{
-			free(words);
-			free(line);
-			continue;
+			exec(words);
 		}
-
-		exec(words);
-
 		free(words);
 		free(line);
+
+		if (!active)
+			break;
 	}
 	return (0);
 }
