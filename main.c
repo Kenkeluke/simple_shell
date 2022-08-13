@@ -1,10 +1,9 @@
 #include "main.h"
 /**
-* main - prints "($) ", wait for the user to enter a command, execute it
-* @ac: argument count
-* @av: argument vector
-* @env: environment variables
-*
+* main - prints "$ ", wait for the user to enter a command, execute it
+*@ac: number of arguments
+*@av: argument list
+*@env: environment
 * Return: 0 on success. -1 otherwise
 */
 int main(int ac __attribute__((unused)), char **av, char **env)

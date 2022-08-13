@@ -1,0 +1,6 @@
+1. rewrite the strtok and remove the realloc function/
+
+2. Check all error messages and ensure that they give the sme result as the regular shell
+
+
+3.
